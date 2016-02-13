@@ -27,7 +27,7 @@ class Writer implements Runnable {
                 
                 if(!response.equals("")) {
                     try {
-                        bw.write("PRIVMSG #drombart :" + response + "\n\r");
+                        bw.write("PRIVMSG " + this.connection.getChannel() + " :" + response + "\n\r");
                         bw.flush();
                     } catch(IOException IOE) {
                         IOE.printStackTrace();
