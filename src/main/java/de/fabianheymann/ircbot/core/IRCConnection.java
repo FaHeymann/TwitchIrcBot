@@ -26,7 +26,7 @@ class IRCConnection {
     
     IRCConnection(String server, int port, String user, String oAuth, String channel, boolean connect)
     {
-        if(!(channel.charAt(0) == '#')) {
+        if(channel.charAt(0) != '#') {
             channel = "#" + channel;
         }
         this.server = server;
@@ -51,7 +51,7 @@ class IRCConnection {
             System.exit(0);
         }
         
-        if(!(conData[Config.CHANNEL].charAt(0) == '#')) {
+        if(conData[Config.CHANNEL].charAt(0) != '#') {
             conData[Config.CHANNEL] = "#" + conData[Config.CHANNEL];
         }
         this.server = conData[Config.SERVER];
